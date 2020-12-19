@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterHTML() Exercise 2</title>
+    <script src="w3.js"></script>
+    <style>
+        * {font-family: Lato;}
+        .row {
+            display: flex;
+        }
+        .column {
+            flex: 50%;
+        }
+        span {
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        th { text-align: left;}
+    </style>
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="column">
+                <h2>FilterHTML()</h2>
+                <h3>Example: Filter a table by class </h3>
+
+                <p>
+                    In this case, the table has a id of <strong>'id01'</strong>. <br>
+                    Our selector is each &lt;tr&gt;. Each row has a class of . <br>
+                    And our filter is <span>this.value</span> 
+                </p>
+
+                <p>Search for a name from the table below</p>
+                
+
+                <input oninput="w3.filterHTML('#id01','.item',this.value)" placeholder="Search for names...">
+                <br>
+                <br>
+                <table id='id01' style="align-items:flex-end;">
+                    <tr>
+                        <th>Name</th>
+                        <th style="padding-left: 10px;">Country</th>
+                    </tr>
+                    <tr class="item">
+                        <td >George Orwell</td>
+                        <td style="padding-left: 10px;">United Kingdom</td>
+                    </tr>
+                    <tr class="item">
+                        <td >Dostoyevsky</td>
+                        <td style="padding-left: 10px;">Russia</td>
+                    </tr>
+                    <tr class="item">
+                        <td >Russel Peters</td>
+                        <td style="padding-left: 10px;">Canada</td>
+                    </tr>
+                    <tr class="item">
+                        <td>Chris Rock</td>
+                        <td style="padding-left: 10px;">United States</td>
+                    </tr>
+                    <tr class="item">
+                        <td>Danny Bhoy</td>
+                        <td style="padding-left: 10px;">Scotland</td>
+                    </tr>
+                    <tr class="item">
+                        <td>John Cleese</td>
+                        <td style="padding-left: 10px;">United Kingdom</td>
+                    </tr>
+                    <tr class="item">
+                        <td>Dave Chapelle</td>
+                        <td style="padding-left: 10px;">United States</td>
+                    </tr>
+                    <tr class="item">
+                        <td>Omid Jalili</td>
+                        <td style="padding-left: 10px;">Iran</td>
+                    </tr>
+                    <tr class="item">
+                        <td>Stephen Amos</td>
+                        <td style="padding-left: 10px;">Nigeria</td>
+                    </tr>
+
+                </table>
+                
+            </div>
+            <div class="column">
+                <h2>Syntax</h2>
+
+                <p>
+                    Syntax: <br>
+                    &ensp;&ensp;w3.filterHTML(id, selector, filter) 
+                </p>
+
+                <p>
+                    <strong>Note:</strong>
+                    <span> this.value</span> should not be in quotes.
+                </p>
+                <hr>
+
+                <h3>What's happening inside filterHTML() </h3>
+                <p style="font-family:monospace"> 
+                    
+w3.filterHTML = function(id, sel, filter) { <br>
+    &ensp;  var a, b, c, i, ii, iii, hit;   <br>
+    &ensp;  a = w3.getElements(id); <br>
+    &ensp;  for (i = 0; i < a.length; i++) {    <br>
+        &ensp; &ensp;  b = a[i].querySelectorAll(sel);   <br>
+        &ensp; &ensp;  for (ii = 0; ii < b.length; ii++) {   <br>
+        &ensp; &ensp; &ensp;  hit = 0;    <br>
+        &ensp; &ensp; &ensp;  if (b[ii].innerText.toUpperCase().indexOf(filter.toUpperCase()) > -1) { <br>
+        &ensp; &ensp; &ensp; &ensp; hit = 1;  <br>
+        &ensp; &ensp; &ensp;  }   <br>
+        &ensp; &ensp; &ensp;  c = b[ii].getElementsByTagName("*");    <br>
+        &ensp; &ensp; &ensp;  for (iii = 0; iii < c.length; iii++) {  <br>
+        &ensp; &ensp; &ensp; &ensp; if (c[iii].innerText.toUpperCase().indexOf(filter.toUpperCase())  > -1) { <br>
+        &ensp; &ensp; &ensp; &ensp; &ensp; hit = 1;    <br>
+        &ensp; &ensp; &ensp; &ensp; } <br>
+        &ensp; &ensp; &ensp;  }   <br>
+        &ensp; &ensp; &ensp;  if (hit == 1) { <br>
+        &ensp; &ensp; &ensp; &ensp; b[ii].style.display = ""; <br>
+        &ensp; &ensp; &ensp;  } else {    <br>
+        &ensp; &ensp; &ensp; &ensp; b[ii].style.display = "none"; <br>
+        &ensp; &ensp; &ensp;  }   <br>
+        &ensp; &ensp;  } <br>
+    &ensp; }   <br>
+};    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

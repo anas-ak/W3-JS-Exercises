@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterHTML() Exercise 1</title>
+    <script src="w3.js"></script>
+    <style>
+        * {font-family: Lato;}
+        .row {
+            display: flex;
+        }
+        .column {
+            flex: 50%;
+        }
+        span {
+            font-weight: bold;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="column">
+                <h2>FilterHTML()</h2>
+                <h3>Example: Filter a list by id </h3>
+
+                <p>
+                    In this case, the list has an id of <strong>'id01'</strong>. <br>
+                    Our selector is each &lt;li&gt; item. <br>
+                    And our filter is <span>this.value</span> 
+                </p>
+
+                <p>Search for a name in the input field</p>
+                <input oninput="w3.filterHTML('#id01','li',this.value)" placeholder="Search for names...">
+
+                <ul id="id01">
+                    <li>James Cameron</li>
+                    <li>Steven Spielberg</li>
+                    <li>Alfred Hitchcock</li>
+                    <li>Christopher Nolan</li>
+                    <li>Brian De Palma</li>
+                    <li>Francis Ford Coppola</li>
+                    <li>Oliver Stone</li>
+                    <li>Martin Scorcese</li>
+                    <li>Akira Kurosawa</li>
+                    <li>George Miller</li>
+                    <li>John Carpenter</li>
+                    <li>Danny Boyle</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Syntax</h2>
+
+                <p>
+                    Syntax: <br>
+                    &ensp;&ensp;w3.filterHTML(id, selector, filter) 
+                </p>
+
+                <p>
+                    <strong>Note:</strong>
+                    <span> this.value</span> should not be in quotes.
+                </p>
+                <hr>
+
+                <h3>What's happening inside filterHTML() </h3>
+                <p style="font-family:monospace"> 
+                    
+w3.filterHTML = function(id, sel, filter) { <br>
+    &ensp;  var a, b, c, i, ii, iii, hit;   <br>
+    &ensp;  a = w3.getElements(id); <br>
+    &ensp;  for (i = 0; i < a.length; i++) {    <br>
+        &ensp; &ensp;  b = a[i].querySelectorAll(sel);   <br>
+        &ensp; &ensp;  for (ii = 0; ii < b.length; ii++) {   <br>
+        &ensp; &ensp; &ensp;  hit = 0;    <br>
+        &ensp; &ensp; &ensp;  if (b[ii].innerText.toUpperCase().indexOf(filter.toUpperCase()) > -1) { <br>
+        &ensp; &ensp; &ensp; &ensp; hit = 1;  <br>
+        &ensp; &ensp; &ensp;  }   <br>
+        &ensp; &ensp; &ensp;  c = b[ii].getElementsByTagName("*");    <br>
+        &ensp; &ensp; &ensp;  for (iii = 0; iii < c.length; iii++) {  <br>
+        &ensp; &ensp; &ensp; &ensp; if (c[iii].innerText.toUpperCase().indexOf(filter.toUpperCase())  > -1) { <br>
+        &ensp; &ensp; &ensp; &ensp; &ensp; hit = 1;    <br>
+        &ensp; &ensp; &ensp; &ensp; } <br>
+        &ensp; &ensp; &ensp;  }   <br>
+        &ensp; &ensp; &ensp;  if (hit == 1) { <br>
+        &ensp; &ensp; &ensp; &ensp; b[ii].style.display = ""; <br>
+        &ensp; &ensp; &ensp;  } else {    <br>
+        &ensp; &ensp; &ensp; &ensp; b[ii].style.display = "none"; <br>
+        &ensp; &ensp; &ensp;  }   <br>
+        &ensp; &ensp;  } <br>
+    &ensp; }   <br>
+};    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

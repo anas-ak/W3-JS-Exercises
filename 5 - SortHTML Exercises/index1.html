@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortHTML() Exercise 1</title>
+    <script src="w3.js"></script>
+    <style>
+        * {font-family: Lato;}
+        .row {
+            display: flex;
+        }
+        .column {
+            flex: 50%;
+        }
+        span {
+            font-weight: bold;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="column">
+                <h2>SortHTML()</h2>
+                <h3>Example: Sort a list by id </h3>
+
+                <p>
+                    In this case, the list has an id of <strong>'id01'</strong>. <br>
+                    Our selector is each &lt;li&gt; item. <br>
+                    And our filter is <span>this.value</span> 
+                </p>
+
+                <p>Click the Sort button to sort the list.</p>
+                <button onclick="w3.sortHTML('#id01','li',this.value)">SORT</button>
+
+                <ul id="id01">
+                    <li>James Cameron</li>
+                    <li>Steven Spielberg</li>
+                    <li>Alfred Hitchcock</li>
+                    <li>Terence Malick</li>
+                    <li>Pamela Anderson</li>
+                    <li>Christopher Nolan</li>
+                    <li>Za Za Gabor</li>
+                    <li>Brian De Palma</li>
+                    <li>Francis Ford Coppola</li>
+                    <li>Oliver Stone</li>
+                    <li>Martin Scorcese</li>
+                    <li>Quentin Tarantino</li>
+                    <li>Akira Kurosawa</li>
+                    <li>George Miller</li>
+                    <li>John Carpenter</li>
+                    <li>Danny Boyle</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Syntax</h2>
+
+                <p>
+                    Syntax: <br>
+                    &ensp;&ensp;w3.sortHTML(id, selector, filter) 
+                </p>
+
+                <p>
+                    <strong>Note:</strong>
+                    <span> this.value</span> should not be in quotes.
+                </p>
+                <hr>
+
+                <h3>What's happening inside SortHTML() </h3>
+                <p style="font-family:monospace"> 
+                    
+                    w3.sortHTML = function(id, sel, sortvalue) { <br>
+                    &ensp; var a, b, i, ii, y, bytt, v1, v2, cc, j;   <br>
+                    &ensp; a = w3.getElements(id); <br>
+                    &ensp; for (i = 0; i < a.length; i++) {    <br>
+                    &ensp; &ensp;  cc = 0;     <br>
+                    &ensp; &ensp;  y = 1;       <br>
+                    &ensp; &ensp;  while (y == 1) {         <br>
+                        &ensp; &ensp; &ensp; y = 0;                      <br>
+                        &ensp; &ensp; &ensp; b = a[i].querySelectorAll(sel);                <br>    
+                        &ensp; &ensp; &ensp; for (ii = 0; ii < (b.length - 1); ii++) {     <br>
+                            &ensp; &ensp; &ensp; &ensp; bytt = 0;        <br>
+                            &ensp; &ensp; &ensp; &ensp; if (sortvalue) { <br>
+                                &ensp; &ensp; &ensp; &ensp; &ensp; v1 = b[ii].querySelector(sortvalue).innerText;   <br>
+                                &ensp; &ensp; &ensp; &ensp; &ensp; v2 = b[ii + 1].querySelector(sortvalue).innerText;   <br>
+                            &ensp; &ensp; &ensp; &ensp; } else {         <br>
+                                &ensp; &ensp; &ensp; &ensp; &ensp; v1 = b[ii].innerText;    <br>
+                                &ensp; &ensp; &ensp; &ensp; &ensp; v2 = b[ii + 1].innerText;<br>
+                            &ensp; &ensp; &ensp; &ensp; }                <br>
+                            &ensp; &ensp; &ensp; &ensp; v1 = v1.toLowerCase();   <br>
+                            &ensp; &ensp; &ensp; &ensp; v2 = v2.toLowerCase();   <br>
+                            &ensp; &ensp; &ensp; &ensp; if ((j == 0 && (v1 > v2)) || (j == 1 && (v1 < v2))) { <br>
+                            &ensp; &ensp; &ensp; &ensp; &ensp; bytt = 1;         <br>
+                            &ensp; &ensp; &ensp; &ensp; &ensp; break;            <br>
+                            &ensp; &ensp; &ensp; &ensp; }                <br>
+                        &ensp; &ensp; &ensp; }                           <br>
+                        &ensp; &ensp; &ensp; if (bytt == 1) {            <br>
+                            &ensp; &ensp; &ensp; &ensp;  b[ii].parentNode.insertBefore(b[ii + 1], b[ii]);<br>
+                            &ensp; &ensp; &ensp; &ensp;  y = 1;          <br>
+                            &ensp; &ensp; &ensp; &ensp;  cc++;           <br>
+                        &ensp; &ensp; &ensp; }               <br>
+                    &ensp; &ensp; }                <br>
+                    &ensp; &ensp; if (cc > 0) {break;}    <br>
+                    &ensp; &ensp; }                <br>
+                    &ensp; }               <br>
+                    };              <br>
+                </p>
+
+                
+                    
+                    
+                    
+                      
+                        
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
