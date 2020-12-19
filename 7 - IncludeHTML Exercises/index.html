@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncludeHTML Exercise</title>
+    <link rel="stylesheet" href="w3 (1).css">
+    <style>
+        * {
+            font-family: lato;
+        }
+    </style>
+    <script src="w3.js"></script>
+</head>
+<body class="w3-container">
+    <div class="w3-panel w3-green w3-large">
+        <p w3-include-html="content.html"></p>
+    </div>
+    <p w3-include-html="h1.html"></p>
+    <script>
+        w3.includeHTML();
+    </script>
+</body>
+</html>

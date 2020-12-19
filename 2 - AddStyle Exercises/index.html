@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Style Exercise</title>
+    <script src="w3.js"></script>
+    <style>
+        body { font-family: Lato; }
+        ul {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Syntax</h3>
+    <p>w3.addStyle(<i>'selector' , 'property' , 'value'</i>)</p>
+    <hr>
+
+    <div>
+    <h2>This Is A Header</h2>
+
+    <p>This is a paragraph. Hello. We're going to do some simple stuff on these elements. <br> Today was a decent day. Got up at 10:30AM, had breakfast then 
+    got down to <br> writing code, while grooving to some wicked tracks. </p>
+
+    <h4>Shopping List</h4>
+    <ul id="nlist">
+        <li>Milk</li>
+        <li>Bread</li>
+        <li>Cheese</li>
+        <li>Eggs</li>
+    </ul>
+    </div>
+    <hr>
+
+    <button onclick="w3.addStyle('h2','color','red')">Turn Header Red</button>
+    <button onclick="w3.addStyle('p','font-size','20px')">Make Paragraph 20px</button>
+    <button onclick="w3.addStyle('#nlist','background-color','yellow')">Turn List Yellow</button>
+
+</body>
+</html>

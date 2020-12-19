@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="w3.js"></script>
+</head>
+<body>
+    <table id="id01">
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Price</th>
+        </tr>
+        <tr w3-repeat="cd">
+            <td>{{title}}</td>
+            <td>{{artist}}</td>
+            <td>{{price}}</td>
+        </tr>
+    </table>
+
+    <script>
+        w3.getHttpObject('cd_catalog.js', myFunction);
+
+        function myFunction(someObject){
+            w3.displayObject('id01', someObject);
+        }
+    </script>
+</body>
+</html>

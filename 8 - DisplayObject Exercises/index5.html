@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayObject Exercise 4</title>
+    <script src="w3.js"></script>
+</head>
+<body>
+
+    <table id="id01">
+        <tr w3-repeat="customers">
+            <td>{{CustomerName}}</td>
+            <td><input type="checkbox" {{checked}}</td>
+        </tr>
+    </table>
+    
+   
+    <script>
+        var myObject = {'customers' : [
+        {'CustomerName': 'Alfred Hitchcock', 'City': 'London', 'Country': 'England'},
+        {'CustomerName': 'James Cameron', 'City': 'Los Angeles', 'Country': 'America'},
+        {'CustomerName': 'Aamir Khan', 'City': 'Mumbai', 'Country': 'India'},
+        {'CustomerName': 'Shoaib Mansoor', 'Lahore': 'London', 'Country': 'Pakistan'},
+        {'CustomerName': 'Akira Kurosawa', 'Tokyo': 'London', 'Country': 'Japan'},
+        {'CustomerName': 'Francis Coppola', 'City': 'Naples', 'Country': 'Italy'},
+        {'CustomerName': 'David Lynch', 'City': 'Houston', 'Country': 'America'}
+        ]};
+        
+        w3.displayObject('id01', myObject);
+        
+    </script>
+</body>
+</html>

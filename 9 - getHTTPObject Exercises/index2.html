@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getHTTPObject Exercise 2</title>
+    <script src="w3.js"></script>
+</head>
+<body>
+    <ul id="id01">
+        <li w3-repeat="customers">{{City}}</li>
+    </ul>
+
+    <script>
+        w3.getHttpObject('customers.js', myFunction);
+        function myFunction(xop){
+            w3.displayObject('id01', xop);
+        }
+    </script>
+</body>
+</html>

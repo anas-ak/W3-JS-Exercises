@@ -1,0 +1,13 @@
+    * {
+        font-family: lato;
+    }
+
+    div {
+        padding: 5px;
+    }
+
+    .nature {
+        object-fit: cover;
+        width: 400px;
+        height: 300px;
+    }

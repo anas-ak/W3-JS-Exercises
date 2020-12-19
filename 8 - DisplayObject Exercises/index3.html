@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayObject Exercise 3</title>
+    <script src="w3.js"></script>
+</head>
+<body>
+    
+<h2>Customers</h2>
+
+<ul id="id01">
+	<li w3-repeat="customers">{{CustomerName}}</li>
+</ul>
+
+<script>
+	w3.displayObject('id01', myObject);
+</script>
+
+<h2>City</h2>
+    <select name="cities" id="id02">
+        <option value="huh" w3-repeat="customers">{{City}}</option>
+    </select>
+
+<h2>Country</h2>
+<select name="country" id="id03">
+    <option value="huh2" w3-repeat="customers">{{Country}}</option>
+</select>
+<script>
+
+var myObject = {'customers' : [
+    {'CustomerName': 'Alfred Hitchcock', 'City': 'London', 'Country': 'England'},
+    {'CustomerName': 'James Cameron', 'City': 'Los Angeles', 'Country': 'America'},
+    {'CustomerName': 'Aamir Khan', 'City': 'Mumbai', 'Country': 'India'},
+    {'CustomerName': 'Shoaib Mansoor', 'City': 'Lahore', 'Country': 'Pakistan'},
+    {'CustomerName': 'Akira Kurosawa', 'City': 'Tokyo', 'Country': 'Japan'},
+    {'CustomerName': 'Francis Coppola', 'City': 'Naples', 'Country': 'Italy'},
+    {'CustomerName': 'David Lynch', 'City': 'Houston', 'Country': 'America'}
+]};
+
+    w3.displayObject('id01', myObject);
+    w3.displayObject('id02', myObject);
+    w3.displayObject('id03', myObject);
+</script>
+    
+</body>
+</html>
+
+

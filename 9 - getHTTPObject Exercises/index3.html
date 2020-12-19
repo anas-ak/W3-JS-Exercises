@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getHttpObject Exercise 3</title>
+    <script src="w3.js"></script>
+</head>
+<body>
+    
+<table id="id01">
+	<tr>
+		<th>Customer Name</th>
+		<th>City</th>
+		<th>Country</th>
+	</tr>
+	<tr w3-repeat="customers">
+		<td>{{CustomerName}}</td>
+		<td>{{City}}</td>
+		<td>{{Country}}</td>
+	</tr>
+</table>
+
+<script>
+	w3.getHttpObject('customers.js', myFunction);
+	
+	function myFunction(someObject) {
+		w3.displayObject('id01', someObject);
+	}
+</script>
+
+</body>
+</html>

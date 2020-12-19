@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayObject Exercise 4</title>
+    <style>
+        .red {background-color: red;}
+        .green {background-color: green;}
+        .blue {background-color: blue;}
+        .orange {background-color: orange;}
+        .yellow {background-color: yellow;}
+    </style>
+    <script src="w3.js"></script>
+</head>
+<body>
+
+    <table id="id01">
+        <tr w3-repeat="customers" class="{{Color}}">
+            <td>{{CustomerName}}</td>
+        </tr>
+    </table>
+    
+   
+    <script>
+        var myObject = {'customers' : [
+        {'CustomerName': 'Alfred Hitchcock', 'City': 'London', 'Country': 'England', 'Color':'green'},
+        {'CustomerName': 'James Cameron', 'City': 'Los Angeles', 'Country': 'America', 'Color':'yellow'},
+        {'CustomerName': 'Aamir Khan', 'City': 'Mumbai', 'Country': 'India' ,'Color':'orange'},
+        {'CustomerName': 'Shoaib Mansoor', 'Lahore': 'London', 'Country': 'Pakistan', 'Color':'green'},
+        {'CustomerName': 'Akira Kurosawa', 'Tokyo': 'London', 'Country': 'Japan', 'Color':'red'},
+        {'CustomerName': 'Francis Coppola', 'City': 'Naples', 'Country': 'Italy', 'Color':'blue'},
+        {'CustomerName': 'David Lynch', 'City': 'Houston', 'Country': 'America', 'Color':'yellow'}
+        ]};
+        
+        w3.displayObject('id01', myObject);
+        
+    </script>
+</body>
+</html>

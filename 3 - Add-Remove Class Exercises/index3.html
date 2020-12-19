@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Class Exercises</title>
+    <script src="w3.js"></script>
+    <style>
+        body { 
+            font-family: Lato; 
+            font-size: 15px;
+            width: 600px;
+        }
+
+        .barked {
+            font-size: 18px;
+            font-weight: bold;
+            border-style: bold;
+        }
+
+        .marked {
+            background-color: yellow;
+            color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <h3>Syntax: </h3>
+    <p>
+        w3.toggleClass(<i>'selector', 'class1'</i>)
+    </p>
+    <p>//Multiple classes
+        <br>
+        w3.toggleClass(<i>'selector', 'class1 class2 class3...'</i>)
+    </p>
+    <hr>
+
+    <button onclick="w3.toggleClass('ul','barked')">Toggle Barked</button>
+    <button onclick="w3.toggleClass('#para','marked')">Toggle Marked</button>
+
+    <div>
+        <h1>CRN++: Molecular Programming Language</h1>
+        <h2>Abstract</h2>
+        <p id="para">
+            Synthetic biology is a rapidly emerging research area, with
+expected wide-ranging impact in biology, nanofabrication, and medicine.
+A key technical challenge lies in embedding computation in molecular
+contexts where electronic micro-controllers cannot be inserted. This
+necessitates effective representation of computation using molecular components.
+While previous work established the Turing-completeness of
+chemical reactions, defining representations that are faithful, efficient,
+and practical remains challenging. <br>
+This paper introduces CRN++, a new language for programming deterministic (mass-action) chemical kinetics
+to perform computation.
+<ul>
+    <li>We present its syntax and semantics</li>
+    <li>Build a compiler translating CRN++ programs into chemical reactions</li>
+    <li>Lay the foundation of a comprehensive framework for molecular programming</li>
+</ul>
+        </p>
+        <p id="para">
+Our language addresses the key challenge of embedding
+familiar imperative constructs into a set of chemical reactions happening
+simultaneously and manipulating real-valued concentrations. Although
+some deviation from ideal output value cannot be avoided, we develop
+methods to minimize the error, and implement error analysis tools. <br><br>
+
+We demonstrate the feasibility of using CRN++ on a suite of well-known algorithms
+for discrete and real-valued computation. CRN++ can be easily
+extended to support new commands or chemical reaction implementations,
+and thus provides a foundation for developing more robust and
+practical molecular programs.
+        </p>
+    </div>
+</body>
+</html>

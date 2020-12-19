@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="w3.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide & Show Exercises</title>
+    <style>
+        * {
+            font-family: lato;
+        }
+        #London {
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 20px;
+            background-color: yellow;
+        }
+
+        .city {
+            background-color: greenyellow;
+            color: red;
+            font-family: calibri;
+            font-size: 18px;
+        }
+
+        h2 {
+            color: blue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        .controls {
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+
+	<div class="controls">
+        <button onclick="w3.hide('#London')">Hide London</button>
+		<button onclick="w3.show('#London')">Show London</button>
+        <button onclick="w3.hide('.city')">Hide Cities</button>
+        <button onclick="w3.show('.city')">Show Cities</button>
+        <button onclick="w3.hide('h2')">Hide Headers</button>
+        <button onclick="w3.show('h2')">Show Headers</button>
+    </div>
+
+    <h2>This is a H2 Header</h2>
+	
+    <div class="city">
+        <h2>This is a Class City Div</h2>
+        <p>This is a small list of Pakistani cities:
+            <ul>
+                <li>Karachi</li>
+                <li>Lahore</li>
+                <li>Islamabad</li>
+                <li>Quetta</li>
+                <li>Peshawar</li>
+            </ul>
+        </p>
+    </div>
+
+    <div id='London'>
+        <h2>This is a ID=London Div</h2>
+        <p>This is a small list of suburbs in London
+            <ul>
+                <li>Chelsea</li>
+                <li>Notting Hill</li>
+                <li>Wembley</li>
+                <li>Camden</li>
+                <li>Hampstead</li>
+            </ul>
+        </p>
+    </div>
+
+</body>
+</html>

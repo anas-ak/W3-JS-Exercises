@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayObject Exercise 4</title>
+    <script src="w3.js"></script>
+</head>
+<body>
+
+    <select id="id01">
+        <option w3-repeat='x in cars'>{{x}}</option>
+    </select>
+
+    <script>
+        w3.displayObject('id01', {'cars': ['Mitsubishi','Nissan','Honda','Toyota','Tesla','Audi','Lexus','Kia', 'Daihatsu', 'Ford', 'Mercedes']});
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <script src='../w3.js'></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2>Slideshow Exercise 2</h2>
+
+    <p>Images with class="nature" will be in the slideshow:</p>
+
+    <div>
+        <img src="img_1.jpg" class="nature">
+        <img src="img_2.jpg" class="nature">
+        <img src="img_3.jpg" class="nature">
+    </div>
+    <div>
+        <button onclick="myShow.previous()">Previous</button>
+        <button onclick="myShow.next()">Next</button>
+    </div>
+    
+    <script>
+
+        /*Declare a variable that will store the slideshow object*/
+        var myShow;
+        
+        /*Assign variable to slideshow and set interval to 0*/
+        myShow = w3.slideshow(".nature", 0);
+
+    </script>
+</body>
+</html>
